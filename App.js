@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  Image,
 } from 'react-native';
 
 import {
@@ -23,6 +24,10 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+
+import { images } from './src/res/images/index';
+
+import { string } from './src/utils/index'
 
 const App: () => React$Node = () => {
   return (
@@ -40,7 +45,14 @@ const App: () => React$Node = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step - One</Text>
+
+              <Text style={styles.str1}>{string.title}</Text>
+              <Image
+                source={images.Img_Book}
+              />
+              
+
+              <Text style={styles.sectionTitle}>Step One</Text>
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
@@ -108,6 +120,9 @@ const styles = StyleSheet.create({
     padding: 4,
     paddingRight: 12,
     textAlign: 'right',
+  },
+  str1: {
+    fontSize: 50,
   },
 });
 
